@@ -1,0 +1,281 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 0 0% 8%;
+
+    --card: 0 0% 96%;
+    --card-foreground: 0 0% 8%;
+
+    --popover: 0 0% 98%;
+    --popover-foreground: 0 0% 8%;
+
+    --primary: 43 90% 50%;
+    --primary-foreground: 0 0% 5%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 43 90% 50%;
+    --accent-foreground: 0 0% 5%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 85%;
+    --input: 0 0% 92%;
+    --ring: 43 90% 50%;
+
+    --radius: 0.75rem;
+
+    /* Premium tokens - Gold & Black */
+    --gold: 43 90% 50%;
+    --gold-light: 43 85% 65%;
+    --gold-dark: 43 95% 35%;
+    --glow-gold: 0 0 30px hsl(43 90% 50% / 0.4);
+    --glow-gold-intense: 0 0 50px hsl(43 90% 50% / 0.6);
+    --gradient-gold: linear-gradient(135deg, hsl(43 90% 50%), hsl(43 85% 65%));
+    --gradient-premium: linear-gradient(135deg, hsl(43 90% 50%), hsl(0 0% 20%));
+    --glass-bg: hsl(0 0% 98% / 0.95);
+    --glass-border: hsl(43 90% 50% / 0.3);
+    
+    /* Theme specific */
+    --chat-bg: 0 0% 98%;
+    --sidebar-bg: 0 0% 96%;
+    --input-bg: 0 0% 98%;
+    --hover-bg: 0 0% 92%;
+    --text-primary: 0 0% 8%;
+    --text-secondary: 0 0% 30%;
+    --text-muted: 0 0% 45%;
+  }
+
+  .dark {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 96%;
+
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 96%;
+
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 96%;
+
+    --primary: 43 90% 50%;
+    --primary-foreground: 0 0% 5%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 96%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 55%;
+
+    --accent: 43 90% 50%;
+    --accent-foreground: 0 0% 5%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 10%;
+    --ring: 43 90% 50%;
+
+    /* Premium tokens - Gold on Black */
+    --gold: 43 90% 50%;
+    --gold-light: 43 85% 65%;
+    --gold-dark: 43 95% 40%;
+    --glow-gold: 0 0 30px hsl(43 90% 50% / 0.5);
+    --glow-gold-intense: 0 0 60px hsl(43 90% 50% / 0.7);
+    --gradient-gold: linear-gradient(135deg, hsl(43 90% 50%), hsl(43 85% 65%));
+    --gradient-premium: linear-gradient(135deg, hsl(43 90% 50%), hsl(0 0% 25%));
+    --glass-bg: hsl(0 0% 7% / 0.85);
+    --glass-border: hsl(43 90% 50% / 0.25);
+    
+    /* Theme specific */
+    --chat-bg: 0 0% 4%;
+    --sidebar-bg: 0 0% 6%;
+    --input-bg: 0 0% 8%;
+    --hover-bg: 0 0% 12%;
+    --text-primary: 0 0% 96%;
+    --text-secondary: 0 0% 70%;
+    --text-muted: 0 0% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 700;
+  }
+
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+  }
+
+  .glass-gold {
+    background: hsl(0 0% 7% / 0.8);
+    backdrop-filter: blur(24px);
+    border: 1px solid hsl(43 90% 50% / 0.3);
+  }
+
+  .glow-gold {
+    box-shadow: var(--glow-gold);
+  }
+
+  .glow-gold-intense {
+    box-shadow: var(--glow-gold-intense);
+  }
+
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .border-gold {
+    border-color: hsl(43 90% 50% / 0.3);
+  }
+
+  .bg-gradient-gold {
+    background: var(--gradient-gold);
+  }
+
+  .animate-pulse-gold {
+    animation: pulse-gold 2s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-shimmer-gold {
+    animation: shimmer-gold 3s linear infinite;
+    background: linear-gradient(90deg, transparent, hsl(43 90% 50% / 0.3), transparent);
+    background-size: 200% 100%;
+  }
+
+  .animate-glow {
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+}
+
+@keyframes pulse-gold {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(43 90% 50% / 0.4);
+  }
+  50% {
+    box-shadow: 0 0 50px hsl(43 90% 50% / 0.7);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.2);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer-gold {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Premium scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(43 90% 50% / 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(43 90% 50% / 0.5);
+}
+
+/* Selection - Gold */
+::selection {
+  background: hsl(43 90% 50% / 0.3);
+  color: hsl(0 0% 100%);
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid hsl(43 90% 50%);
+  outline-offset: 2px;
+}
+
+/* Glassmorphism card */
+.glass-card {
+  background: linear-gradient(135deg, hsl(0 0% 10% / 0.9), hsl(0 0% 5% / 0.95));
+  backdrop-filter: blur(20px);
+  border: 1px solid hsl(43 90% 50% / 0.2);
+  box-shadow: 0 8px 32px hsl(0 0% 0% / 0.4), inset 0 1px 0 hsl(43 90% 50% / 0.1);
+}
+
+/* Premium button glow */
+.btn-premium {
+  background: linear-gradient(135deg, hsl(43 90% 50%), hsl(43 80% 45%));
+  box-shadow: 0 4px 20px hsl(43 90% 50% / 0.4);
+  transition: all 0.3s ease;
+}
+
+.btn-premium:hover {
+  box-shadow: 0 6px 30px hsl(43 90% 50% / 0.6);
+  transform: translateY(-2px);
+}

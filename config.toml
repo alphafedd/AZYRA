@@ -1,0 +1,19 @@
+project_id = "htdpbopjoflhsprezrpi"
+
+[functions.alpha-ai-chat]
+verify_jwt = false
+
+[functions.generate-image]
+verify_jwt = false
+
+[functions.analyze-image]
+verify_jwt = false
+
+[functions.edit-image]
+verify_jwt = false
+
+[functions.web-search]
+verify_jwt = false
+
+[functions.generate-video]
+verify_jwt = false
